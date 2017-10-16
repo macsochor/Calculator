@@ -3,18 +3,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.msmd.librarydemo.MainActivity"
-
+    android:layout_margin="16dp"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="right"
-        android:text=""
-        android:textColor="@color/white"
-        android:textSize="40sp" />
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="right">
+
+        <TextView
+            android:id="@+id/tv_firstnumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/tv_operation"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="15dp"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
+        <TextView
+            android:id="@+id/tv_operation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@+id/tv_secondnumber"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
+        <TextView
+            android:id="@+id/tv_secondnumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_gravity="right"
+            android:text=""
+            android:layout_alignParentRight="true"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -39,10 +67,12 @@
             android:text="9" />
 
         <Button
-            android:id="@+id/button_clear"
+            android:id="@+id/button_divide"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Clear" />
+            android:text="÷"
+            style="@style/operationStyle"/>
+
 
     </LinearLayout>
 
@@ -68,6 +98,12 @@
             android:layout_height="wrap_content"
             android:text="6" />
 
+        <Button
+            android:id="@+id/button_multiply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="×"
+            style="@style/operationStyle"/>
 
     </LinearLayout>
 
@@ -93,6 +129,13 @@
             android:layout_height="wrap_content"
             android:text="3" />
 
+        <Button
+            android:id="@+id/button_subtract"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            style="@style/operationStyle"/>
+
 
     </LinearLayout>
 
@@ -101,25 +144,37 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/button_plus"
+            android:id="@+id/button_clear"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+" />
+            android:layout_height="match_parent"
+            android:background="@drawable/button_background_bottom"
+            android:text="clear"
+            android:textColor="@color/light_red"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/button0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:background="@drawable/button_background_bottom"
             android:text="0" />
 
         <Button
             android:id="@+id/button_equals"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/light_red"
             android:layout_gravity="center"
+            android:background="@drawable/button_background_bottom"
             android:text="=" />
 
+        <Button
+            android:id="@+id/button_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:background="@drawable/operation_background_bottom"/>
 
     </LinearLayout>
 
